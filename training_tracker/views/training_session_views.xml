@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo><data>
+  <record id="training_session_view_form" model="ir.ui.view">
+    <field name="name">training.session.view.form</field>
+    <field name="model">training.session</field>
+  </record>
+</data></odoo>

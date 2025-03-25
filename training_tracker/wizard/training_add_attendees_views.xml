@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<odoo>
+  <record id="training_add_attendees_view_form" model="ir.ui.view">
+    <field name="name">training.add.attendees.view.form</field>
+    <field name="model">training.add.attendees</field>
+    <field name="arch" type="xml">
+      <form string="Add attendees">
+      </form>
+    </field>
+  </record>
+</odoo>

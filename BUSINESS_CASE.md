@@ -25,13 +25,13 @@ Develop an Odoo 16 module, "Employee Training Tracker," to streamline and automa
 
 1. Models:
     * training.course:
-        * Fields: name (Char), description (Text), duration (Integer), category (Selection), certification_required (Boolean), renewal_period (Integer, if certification_required).
+        * Fields: name (Char), description (Text), duration (Integer), category (Selection), instructor_ids (Many2many to res.users) certification_required (Boolean), renewal_period (Integer, if certification_required).
         * Methods: calculate_expiry_date() (calculates certification expiry based on renewal period).
     * training.session:
-        * Fields: course_id (Many2one), start_date (Date), end_date (Date), instructor (Char), attendees (Many2many to res.users).
+        * Fields: course_id (Many2one), start_date (DateTime), duration (Float), end_date(DateTime), instructor_id (Many2one to res.users), session_ids (One2many to training.session), attendees (Many2many to res.users).
         * Methods: check_session_overlap() (validates no overlapping sessions for an instructor).
     * training.completion:
-        * Fields: employee_id (Many2one to res.users), course_id (Many2one), completion_date (Date), expiry_date (Date, computed based on course and renewal period).
+        * Fields: employee_id (Many2one to res.users), course_id (Many2one), completion_date (Date), expiry_date (DateTime, computed based on course and renewal period).
         * Methods: create_completion_record() (automatically creates completion record when a user is added to a training session).
     * training.wizard.add_attendees:
         * Fields: session_id (Many2one), attendees (Many2many to res.users).
