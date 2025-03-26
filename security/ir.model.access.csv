@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_training_completion_user,training.completion.user,model_training_completion,base.group_user,1,0,0,0
+access_training_completion_manager,training.completion.manager,model_training_completion,employee_training_tracker.training_manager_group,1,1,1,1
+access_training_course_manager,training.session.manager,model_training_session,employee_training_tracker.training_manager_group,1,1,1,1
+access_training_course_manager,training.course.manager,model_training_course,employee_training_tracker.training_manager_group,1,1,1,1
