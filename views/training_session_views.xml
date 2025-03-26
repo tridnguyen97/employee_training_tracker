@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo><data>
+  <record id="training_session_view_form" model="ir.ui.view">
+    <field name="name">training.session.view.form</field>
+    <field name="model">training.session</field>
+    <field name="arch" type="xml">
+      <form string="Training Session">
+        <sheet>
+          <group>
+            <field name="course_id"/>
+            <field name="instructor_id"/>            
+          </group>
+          <group>
+            <field name="start_date"/>
+            <field name="end_date"/> 
+            <field name="duration"/>
+          </group>
+          <group>
+            <field name="attendees_ids"/>
+            <field name="total_sessions"/>
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  
+  <record id="training_session_view_calendar" model="ir.ui.view">
+    <field name="name">training.session.view.calendar</field>
+    <field name="model">training.session</field>
+    <field name="arch" type="xml">
+      <calendar
+        string="Training session"
+        date_start="start_date"
+        date_stop="end_date"
+        mode="month"
+        quick_create="0"
+        color="instructor_id"
+        event_open_popup="True"
+        js_class="time_off_calendar"
+        show_unusual_days="True">
+          <field name="instructor_id"/>
+      </calendar>
+    </field>
+  </record>
+</data></odoo>

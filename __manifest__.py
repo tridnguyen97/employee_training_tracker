@@ -5,6 +5,7 @@
     "version": "0.1",
     "author": "Tri Duc Nguyen",
     "description": "streamline and automate the company's training management process",
+    "depends": ["calendar"],
     "data": [
         'security/ir.model.access.csv',
 
@@ -13,4 +14,6 @@
         'views/training_completion_views.xml',
     ],
     "view": "",
+    "installable": True,
+    "application": True,
 }
