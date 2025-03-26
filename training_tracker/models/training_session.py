@@ -13,7 +13,7 @@ class Session(models.Model):
     duration = fields.Float("Duration (Hours)")
     end_date = fields.DateTime("End Date", compute="_compute_end_date")
     instructor_id = fields.Many2one("res.users", string="Instructor")
-    attendee_ids = fields.Many2many("res.users", "training_session_users_rel",
+    attendees_ids = fields.Many2many("res.users", "training_session_users_rel",
                                     "training_session_id", "attendee_id")
     total_sessions = fields.Integer(string="Total Sessions", compute='_compute_total_sessions', store=True)
 

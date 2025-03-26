@@ -16,7 +16,7 @@ class TrainingAddAttendees(models.TransientModel):
         self.ensure_one()
         if self.session_id and self.attendees_ids:
             # add selected attendees in the wizard
-            self.session_id.attendee_ids |= self.attendees_ids
+            self.session_id.attendees_ids |= self.attendees_ids
             for attendee in self.attendees_ids:
                 # create a new completion record
                 self.env["training.completion"].create({
