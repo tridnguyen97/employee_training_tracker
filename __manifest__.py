@@ -10,6 +10,8 @@
         'security/ir.model.access.csv',
         'security/training_tracker_security.xml',
 
+        'data/training_course_category_data.xml',
+
         'views/training_course_views.xml',
         'views/training_session_views.xml',
         'views/training_completion_views.xml',

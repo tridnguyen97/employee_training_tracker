@@ -14,7 +14,7 @@ class Course(models.Model):
     instructor_ids = fields.Many2many("res.users", "training_course_user_rel",
                                       "course_id", "instructor_id")
     duration = fields.Integer("Duration")
-    category = fields.Selection(string="Course Category")
+    category_id = fields.Many2one("training.course.category",string="Course Category")
     certification_required = fields.Boolean(string="Need certification?")
     renewal_period = fields.Integer("Renewal Period (Days)", required=True)
     expiry_date = fields.Datetime("Expiry Date", compute="calculate_expiry_date", store=True)

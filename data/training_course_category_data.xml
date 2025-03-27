@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="training_course_category_compliance" model="training.course.category">
+            <field name="name">Compliance and Legal</field>
+            <field name="description">Training related to legal requirements and company policies.</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="training_course_category_technical" model="training.course.category">
+            <field name="name">Technical and Software</field>
+            <field name="description">Training on software, technical skills, and IT.</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="training_course_category_professional" model="training.course.category">
+            <field name="name">Professional Development</field>
+            <field name="description">Training for personal and professional growth.</field>
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="training_course_category_onboarding" model="training.course.category">
+            <field name="name">Onboarding and Orientation</field>
+            <field name="description">Training for new employees.</field>
+            <field name="sequence">40</field>
+        </record>
+
+        <record id="training_course_category_health" model="training.course.category">
+            <field name="name">Health and Wellness</field>
+            <field name="description">Training related to employee well-being.</field>
+            <field name="sequence">50</field>
+        </record>
+
+        <record id="training_course_category_compliance_safety" model="training.course.category">
+            <field name="name">Safety Training</field>
+            <field name="description">Workplace safety and emergency procedures.</field>
+            <field name="parent_id" ref="training_course_category_compliance"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="training_course_category_compliance_privacy" model="training.course.category">
+            <field name="name">Data Privacy</field>
+            <field name="description">Training on GDPR and data protection.</field>
+            <field name="parent_id" ref="training_course_category_compliance"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="training_course_category_technical_software" model="training.course.category">
+            <field name="name">Software Proficiency</field>
+            <field name="description">Training on company software.</field>
+            <field name="parent_id" ref="training_course_category_technical"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="training_course_category_technical_it" model="training.course.category">
+            <field name="name">IT Security</field>
+            <field name="description">Cybersecurity and secure practices.</field>
+            <field name="parent_id" ref="training_course_category_technical"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="training_course_category_professional_leadership" model="training.course.category">
+            <field name="name">Leadership Development</field>
+            <field name="description">Training for managers and supervisors.</field>
+            <field name="parent_id" ref="training_course_category_professional"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="training_course_category_professional_communication" model="training.course.category">
+            <field name="name">Communication Skills</field>
+            <field name="description">Effective communication and presentation.</field>
+            <field name="parent_id" ref="training_course_category_professional"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="training_course_category_onboarding_new_hire" model="training.course.category">
+            <field name="name">New Hire Orientation</field>
+            <field name="description">Introduction to company culture and policies.</field>
+            <field name="parent_id" ref="training_course_category_onboarding"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="training_course_category_health_ergonomics" model="training.course.category">
+            <field name="name">Ergonomics</field>
+            <field name="description">Proper workspace setup and posture.</field>
+            <field name="parent_id" ref="training_course_category_health"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="training_course_category_health_stress" model="training.course.category">
+            <field name="name">Stress Management</field>
+            <field name="description">Techniques for managing stress.</field>
+            <field name="parent_id" ref="training_course_category_health"/>
+            <field name="sequence">20</field>
+        </record>
+
+    </data>
+</odoo>
