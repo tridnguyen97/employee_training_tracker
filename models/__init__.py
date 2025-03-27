@@ -2,4 +2,5 @@
 
 from . import training_completion
 from . import training_course
+from . import training_course_category
 from . import training_session

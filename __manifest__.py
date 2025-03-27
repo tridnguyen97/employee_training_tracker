@@ -7,8 +7,8 @@
     "description": "streamline and automate the company's training management process",
     "depends": ["calendar"],
     "data": [
-        'security/ir.model.access.csv',
         'security/training_tracker_security.xml',
+        'security/ir.model.access.csv',
 
         'data/training_course_category_data.xml',
 
