@@ -10,7 +10,7 @@ class Course(models.Model):
 
     name = fields.Char("Name", required=True)
     description = fields.Text("Description")
-    session_ids = fields.One2Many("training.session", "course_id", string="Sessions")
+    session_ids = fields.One2many("training.session", "course_id", string="Sessions")
     instructor_ids = fields.Many2many("res.users", "training_course_user_rel",
                                       "course_id", "instructor_id")
     duration = fields.Integer("Duration")
