@@ -15,12 +15,6 @@ class Session(models.Model):
     instructor_id = fields.Many2one("res.users", string="Instructor")
     attendees_ids = fields.Many2many("res.users", "training_session_users_rel",
                                     "training_session_id", "attendee_id")
-    total_sessions = fields.Integer(string="Total Sessions", compute='_compute_total_sessions', store=True)
-
-    @api.depends('session_ids')
-    def _compute_total_sessions(self):
-        for record in self:
-            record.total_sessions = len(record.session_ids)
 
     @api.depends("start_date", "end_date")
     def _compute_end_date(self):
