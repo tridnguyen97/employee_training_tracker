@@ -8,6 +8,7 @@
     "depends": ["calendar"],
     "data": [
         'security/ir.model.access.csv',
+        'security/training_tracker_security.xml',
 
         'views/training_course_views.xml',
         'views/training_session_views.xml',
