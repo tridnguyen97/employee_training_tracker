@@ -9,7 +9,7 @@ class Completion(models.Model):
     employee_id = fields.Many2one("res.users", string="Employee")
     course_id = fields.Many2one("training.course", string="Course")
     completion_date = fields.Date("Completion Date")
-    expiry_date = fields.DateTime("Expiry Date", compute="_compute_expiry_date")
+    expiry_date = fields.Datetime("Expiry Date", compute="_compute_expiry_date")
 
     _sql_constraints = [
         ('unique_course_attendee', 'unique(course_id, attendee_id)',

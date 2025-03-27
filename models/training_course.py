@@ -17,7 +17,7 @@ class Course(models.Model):
     category = fields.Selection(string="Course Category")
     certification_required = fields.Boolean(string="Need certification?")
     renewal_period = fields.Integer("Renewal Period (Days)", required=True)
-    expiry_date = fields.DateTime("Expiry Date", compute="calculate_expiry_date", store=True)
+    expiry_date = fields.Datetime("Expiry Date", compute="calculate_expiry_date", store=True)
 
     @api.depends('renewal_period')
     def calculate_expiry_date(self):

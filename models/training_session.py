@@ -9,9 +9,9 @@ class Session(models.Model):
     _description = "Training Session"
 
     course_id = fields.Many2one("training.course", string="Course")
-    start_date = fields.DateTime("Start Date")
+    start_date = fields.Datetime("Start Date")
     duration = fields.Float("Duration (Hours)")
-    end_date = fields.DateTime("End Date", compute="_compute_end_date")
+    end_date = fields.Datetime("End Date", compute="_compute_end_date")
     instructor_id = fields.Many2one("res.users", string="Instructor")
     attendees_ids = fields.Many2many("res.users", "training_session_users_rel",
                                     "training_session_id", "attendee_id")
