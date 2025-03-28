@@ -5,6 +5,16 @@
     <field name="model">training.add.attendees</field>
     <field name="arch" type="xml">
       <form string="Add attendees">
+        <sheet>
+          <group>
+            <field name="session_id" options="{'no_create_edit': True, 'no_create': True}"/>
+            <field name="attendee_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+          </group>
+        </sheet>
+        <footer>
+          <button name="action_add_attendees" string="Add Attendees" type="object" class="oe_highlight"/>
+          <button string="Cancel" class="oe_link" special="cancel"/>
+        </footer>
       </form>
     </field>
   </record>

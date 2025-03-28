@@ -1,10 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
 <odoo>
 <data>
-  <record id="training_completion_tree_view" model="ir.ui.view">
-    <field name="name">training.completion.tree.view</field>
-    <field name="model">training.completion</field>
+  <record id="training_course_tree_view" model="ir.ui.view">
+    <field name="name">training.course.tree.view</field>
+    <field name="model">training.course</field>
     <field name="arch" type="xml">
-      
+      <tree string="Training Course">
+        <field name="name"/>
+        <field name="category_id"/>
+        <field name="duration"/>
+      </tree>
+    </field>
+  </record>
+
+  <record id="training_course_form_view" model="ir.ui.view">
+    <field name="name">training.course.form.view</field>
+    <field name="model">training.course</field>
+    <field name="arch" type="xml">
+      <form string="Training Course Form">
+        <sheet>
+          <group string="Detailed course information">
+            <field name="name"/>
+            <field name="description"/>
+            <field name="session_ids" options="{'no_create': True, 'no_edit': True}" widget="many2many_tags"/>
+            <field name="instructor_ids" options="{'no_create': True, 'no_edit': True}" widget="many2many_tags"/>
+            <field name="renewal_period" placeholder="..In days"/>
+          </group>
+          <group string="Category selection">
+            <field name="category_id"/>
+          </group>
+          <group string="Certification renewal options">
+            <field name="certification_required"/>
+          </group>
+        </sheet>
+      </form>
     </field>
   </record>
 </data>

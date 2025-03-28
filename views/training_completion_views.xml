@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+<data>
+  <record id="training_completion_tree_view" model="ir.ui.view">
+    <field name="name">training.completion.tree.view</field>
+    <field name="model">training.completion</field>
+    <field name="arch" type="xml">
+      <tree string="Training Completion">
+        <field name="employee_id"/>
+        <field name="course_id"/>
+        <field name="completion_date"/>
+        <field name="expiry_date"/>
+      </tree>
+    </field>
+  </record>
+  <record id="training_completion_form_view" model="ir.ui.view">
+    <field name="name">training.completion.form.view</field>
+    <field name="model">training.completion</field>
+    <field name="arch" type="xml">
+      <form string="Training Completion Form">
+        <sheet>
+          <field name="employee_id"/>
+          <field name="course_id"/> 
+          <field name="completion_date"/>
+          <field name="expiry_date"/>
+        </sheet>
+      </form>
+    </field>
+  </record>
+  <record id="training_completion_search_view" model="ir.ui.view">
+    <field name="name">training.completion.search.view</field>
+    <field name="model">training.completion</field>
+    <field name="arch" type="xml">
+      <search string="Search Training Completion">
+        <field name="employee_id"/>
+        <field name="course_id"/>
+        <field name="completion_date"/>
+        <group expand="0" string="Group by">
+          <filter string="Employee" name="employee_group" context="{'group_by': 'employee_id'}"/>
+          <filter string="Course" name="course_group" context="{'group_by': 'course_id'}"/>
+        </group>
+      </search>
+    </field>
+  </record>
+</data>
+</odoo>

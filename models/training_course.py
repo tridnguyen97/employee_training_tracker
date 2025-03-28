@@ -29,4 +29,4 @@ class Course(models.Model):
     def calculate_expiry_date(self):
         for course in self:
             if course.expiry_date and course.renewal_period:
-                course.expiry_date = timedelta(days=course.renewal_period)
+                course.expiry_date += timedelta(days=course.renewal_period)

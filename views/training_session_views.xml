@@ -16,7 +16,13 @@
             <field name="duration"/>
           </group>
           <group>
-            <field name="attendees_ids"/>
+            <field name="attendees_ids" context="{'default_session_id': active_id}"/>
+            <xpath expr="//field[@name='attendees_ids']" position="after">
+              <button name="%(training_session.action_training_wizard_add_attendees)d"
+                string="Add Attendees"
+                type="action"
+                class="oe_highlight"/>
+            </xpath>
             <field name="total_sessions"/>
           </group>
         </sheet>
@@ -41,5 +47,14 @@
           <field name="instructor_id"/>
       </calendar>
     </field>
+  </record>
+
+  <record id="action_training_wizard_add_attendees" model="ir.actions.act_window">
+    <field name="name">Add Attendees</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">training.wizard.add_attendees</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+    <field name="context">{'default_session_id': active_id}</field>
   </record>
 </data></odoo>
