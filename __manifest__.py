@@ -12,6 +12,9 @@
 
         'data/training_course_category_data.xml',
 
+        'views/employee_training_menus.xml',
+        'wizard/training_add_attendees_views.xml',
+
         'views/training_course_views.xml',
         'views/training_session_views.xml',
         'views/training_completion_views.xml',
