@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-  <menuitem id="training_root_menu" name="Training" sequence="10"/>
+  <menuitem 
+    id="training_root_menu" 
+    name="Training" 
+    sequence="10"
+    web_icon="employee_training_tracker,static/description/icon.png"/>
 
 <menuitem 
   id="menu_courses" 
