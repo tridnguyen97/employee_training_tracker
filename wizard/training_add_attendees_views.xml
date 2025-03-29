@@ -8,11 +8,11 @@
         <sheet>
           <group>
             <field name="session_id" options="{'no_create_edit': True, 'no_create': True}"/>
-            <field name="attendee_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
+            <field name="attendees_ids" widget="many2many_tags" options="{'no_create_edit': True}"/>
           </group>
         </sheet>
         <footer>
-          <button name="action_add_attendees" string="Add Attendees" type="object" class="oe_highlight"/>
+          <button name="action_add_attendees_and_create_completion" string="Add Attendees" type="object" class="oe_highlight"/>
           <button string="Cancel" class="oe_link" special="cancel"/>
         </footer>
       </form>
