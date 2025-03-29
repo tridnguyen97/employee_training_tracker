@@ -42,5 +42,10 @@
       </search>
     </field>
   </record>
+  <record id="training_completion_action" model="ir.actions.act_window">
+    <field name="name">training.completion.action</field>
+    <field name="res_model">training.completion</field> <field name="view_mode">tree,form</field>
+    <field name="target">current</field>
+</record>
 </data>
 </odoo>

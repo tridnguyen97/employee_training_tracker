@@ -57,4 +57,10 @@
     <field name="target">new</field>
     <field name="context">{'default_session_id': active_id}</field>
   </record>
+
+  <record id="training_session_action" model="ir.actions.act_window">
+    <field name="name">training.session.action</field>
+    <field name="res_model">training.session</field> <field name="view_mode">tree,form</field>
+    <field name="target">current</field>
+  </record>
 </data></odoo>
