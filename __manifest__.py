@@ -19,6 +19,9 @@
         'views/training_completion_views.xml',
 
         'views/employee_training_menus.xml',
+
+        'report/expired_certification.xml',
+        'report/training_completion.xml'
     ],
     "view": "",
     "installable": True,
