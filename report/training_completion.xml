@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="action_training_completion_report"
+            model="res.users"  
+            string="Employee Training Report"
+            report_type="qweb-pdf"
+            name="employee_training_tracker.report_training_completion"  
+            file="employee_training_tracker.report_training_completion"
+            print_report_name="'Employee Training Report - %s' % (object.name)"
+        />
+        
+        <template id="report_training_completion">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="employee">  
+                    <t t-call="employee_training_tracker.report_training_completion_document" t-lang="employee.lang"/>
+                </t>
+            </t>
+        </template>
+        
+        <template id="report_training_completion_document">
+            <div class="header">
+                <div class="row">
+                    <div class="col-6">
+                        <img t-att-src="'/logo.png'" style="max-height: 45mm;"/>
+                    </div>
+                    <div class="col-6 text-right">
+                        <h2 style="margin-top:0px;">Employee Training Report</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="page">
+                <h2><span t-field="employee.name"/></h2>  
+                <h3>Training Courses Completed:</h3>
+                <t t-set="completions" t-value="env['training.completion'].search([('employee_id', '=', employee.id)])"/>
+                <t t-if="completions">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Course Name</th>
+                                <th>Completion Date</th>
+                                <th>Instructor</th>
+                                <th>Score</th>
+                                <th>Certification Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="completions" t-as="completion">
+                                <tr>
+                                    <td><span t-field="completion.course_id.name"/></td>
+                                    <td><span t-field="completion.completion_date"/></td>
+                                    <td><span t-field="completion.instructor_id.name"/></td>
+                                    <td><span t-field="completion.score"/></td>
+                                    <td><span t-field="completion.certification_status"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </t>
+                <t t-else="">
+                    <p>No training courses completed.</p>
+                </t>
+            </div>
+        </template>
+    </data>
+</odoo>
